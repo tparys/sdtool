@@ -42,11 +42,16 @@ INCLUDES_SRC=$(addprefix src/,$(INCLUDES))
 SOURCES_SRC=$(addprefix src/,$(SOURCES))
 
 all: $(EXECUTABLE)
-	
+
 $(EXECUTABLE): $(OBJECTS_OBJ)
 	$(CC) $(LDFLAGS) $(OBJECTS_OBJ) -o $@
 	$(STRIP) $@
-	
+
+install: $(EXECUTABLE)
+	install -D $(EXECUTABLE) $(DESTDIR)/usr/bin/$(EXECUTABLE)
+
+uninstall:
+	rm -f $(DESTDIR)/usr/bin/$(EXECUTABLE)
 
 obj/%.o: src/%.c $(INCLUDES_SRC)
 	@mkdir -p obj/

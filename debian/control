@@ -1,0 +1,15 @@
+Source: sdtool
+Section: unknown
+Priority: optional
+Maintainer: Timothy Parys <tparys@gmail.com>
+Build-Depends: debhelper (>=9)
+Standards-Version: 3.9.6
+Homepage: https://bertold.org
+Vcs-Git: https://github.com/BertoldVdb/sdtool
+
+Package: sdtool
+Architecture: any
+Depends: libc6
+Build-Depends: libc6-dev, coreutils
+Description: Tool to manage write protection flag of SD cards.
+ A small tool for managing the write protection flag of SD cards.
